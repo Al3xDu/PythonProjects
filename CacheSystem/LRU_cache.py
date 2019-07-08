@@ -36,7 +36,3 @@ class LRUCache():
         """ Removes invalid urls."""
         del self.hash[url.key]
         del self.url_list[self.url_list.index(url)]
-
-
-
-
