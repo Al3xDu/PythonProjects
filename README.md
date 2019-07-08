@@ -1,5 +1,6 @@
 # PythonProjects
 
+A collection of small python3 projects made in order to understand concepts of programming.
 
 # FightClubManager
 
@@ -12,3 +13,5 @@ by making changes amongst the team.
 
 
 This mini-project has been worked on for four days in my spare time, while consolidating my knowledge of OOP basics in python3.
+
+#CachingSystem

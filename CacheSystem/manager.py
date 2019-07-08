@@ -1,6 +1,5 @@
-def main():
-    print('copac')
+from LRU_cache import *
 
 
-if __name__ == '_main_':
-    main()
+if __name__ == '__main__':
+    print("Works for now.")
