@@ -1,0 +1,3 @@
+[submodule "FightClubManager"]
+	path = FightClubManager
+	url = https://github.com/Al3xDu/FightClubManager.git
