@@ -1,4 +1,7 @@
 from LRU_cache import *
+from helpers import print_cache, print_options
+
+import regex as re
 
 one = LRUCacheURL(1, 'www.google.com')
 two = LRUCacheURL(2, 'www.facebook.com')
@@ -10,18 +13,23 @@ cache.insert_url(one)
 cache.insert_url(two)
 cache.insert_url(three)
 
-
-def print_cache(curr_cache):
-    """ Function to print contents of cached mem."""
-    for index, url in enumerate(curr_cache.url_list):
-        print('index: {} '
-              'key: {} '
-              'url: {} '
-              'timestamp: {} '.format(index,
-                                      url.key,
-                                      url.url,
-                                      url.timestamp))
+regex = re.compile(
+        r'^(?:http|ftp)s?://'  # http:// or https://
+        r'(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+(?:[A-Z]{2,6}\.?|[A-Z0-9-]{2,}\.?)|'  # domain...
+        r'localhost|'  # localhost...
+        r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})'  # ...or ip
+        r'(?::\d+)?'  # optional port
+        r'(?:/?|[/?]\S+)$', re.IGNORECASE)
 
 
 if __name__ == '__main__':
-    print_cache(cache)
+    print(re.match(regex, '///aaa.com') is not None)
+    while True:
+        print_options()
+        i = input('Selection:')
+        if i == 1:
+            print_cache(cache)
+        if i == 2:
+            print("Ai de plm poate merge.")
+        if i == 3:
+            break
