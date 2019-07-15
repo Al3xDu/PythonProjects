@@ -2,7 +2,7 @@ from datetime import datetime
 
 
 class LRUCacheURL:
-    """Data structures of the items stored in cache mem."""
+    """Class of data structures of the items stored in cache mem."""
     def __init__(self, key, url):
         self.key = key
         self.url = url
@@ -39,7 +39,7 @@ class LRUCache:
 
     def validate_url(self):
         """ Check if the urls are still valid."""
-
+        # need to implement the possibility of exceeding the cache length, then the last entry gets deleted
         def _outdated_urls():
             now = datetime.now()
             for url in self.url_list:
