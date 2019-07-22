@@ -36,6 +36,14 @@ def get_url_index(curr_cache, index):
             return url.url
 
 
+# func to get url based on key
+def get_url_key(curr_cache, key):
+    """Return the url by the index."""
+    for k, url in enumerate(curr_cache.url_list):
+        if k == key:
+            return url.url
+
+
 # func to print options for the menu
 def print_options():
     print('1.Print memory cached.')
@@ -43,7 +51,6 @@ def print_options():
     print('3.Read the length of the cache from a .init file.')
     print('4.Create and insert a new url in cache.')
     print('5.Verify if an URL is correct.')
-    print('5.Print something idk.')
     print('6.Print something idk.')
     print('7.Funny message.')
     print('0.Exit.')

@@ -28,12 +28,12 @@ class LRUCache:
             # If the length exceeds the cache's upper bound remove the last item
             if len(self.url_list) > self.length:
                 self.remove_url(self.url_list[-1])
-            # If this is a new url append it to the front of the list!
+            # If this is a new url append it to the front of url_list
             self.hash[url.key] = url
             self.url_list.insert(0, url)
 
     def remove_url(self, url):
-        """ Removes invalid urls."""
+        """ Removes urls."""
         del self.hash[url.key]
         del self.url_list[self.url_list.index(url)]
 

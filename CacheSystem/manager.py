@@ -1,23 +1,13 @@
 from LRU_cache import *
 from helpers import print_cache, print_options, url_verifier, get_url_index, read_yaml
 
-import random
-
-one = LRUCacheURL(1, 'https://www.google.com/')
-two = LRUCacheURL(2, 'www.facebook.com')
-three = LRUCacheURL(3, 'www.twitter.com')
 # Setup
 cache = LRUCache(length=3, alpha=5)
-cache.insert_url(one)
-cache.insert_url(two)
-cache.insert_url(three)
 
 
 if __name__ == '__main__':
 
-    i = random.randint(0, 128)
-    j = random.randint(128, 512)
-    key = random.randint(i, j)
+    key = 1
 
     while True:
         print_options()
@@ -25,7 +15,7 @@ if __name__ == '__main__':
         if i == 1:
             print_cache(cache)
         if i == 2:
-            print(read_yaml('capacity'))
+            print(read_yaml('length'))
         if i == 3:
             pass
         if i == 4:
@@ -34,8 +24,7 @@ if __name__ == '__main__':
             # insert in cache
             it = LRUCacheURL(key, input_url)
             cache.insert_url(it)
-            key = random.randint(i, j)
-            i = random.randint((i+j) // 2, ((i+j) * 3) // 2)
+            key = key + 1
         if i == 5:
             index = input('Insert the index of the url:')
             verify_url = get_url_index(cache, index)
